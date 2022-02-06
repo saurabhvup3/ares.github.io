@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ARES Task</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<div id="contact-form">
+	<div>
+		<h1 style="text-align: center; font-size: 30px; font-weight:bold;">Welcome</h1> 
+		<h4>This form is devloped by Ayush Verma (CSDS Branch)</h4> 
+	</div>
+		   <form method="post" action="#">
+			<div>
+		      <label for="name">
+		      	<span class="required">Name: *</span> 
+		      	<input type="text" id="name" name="name" value="" placeholder="Your Name" required="required" tabindex="1" autofocus="autofocus" />
+		      </label> 
+			</div>
+			<div>
+		      <label for="email">
+		      	<span class="required">Email: *</span>
+		      	<input type="email" id="email" name="email" value="" placeholder="Your Email" tabindex="2" required="required" />
+		      </label>  
+			</div>
+			<div>
+				<label for="date ">
+					<span class="required">Date of Birth: *</span>
+  				<input type="date" id="birthday" name="birthday">
+  			</label>
+ 			</div>
+			<div>		          
+		      <label for="subject" style="color: white;">
+		      <span>Subject: </span>
+			      <select id="subject" name="subject" tabindex="4">   
+			         <option>Click For Dropdown</option>
+			         <option>Skill One</option>  
+			         <option>Skill Two</option>
+			         <option>Skill Three</option>  
+			         <option> Others</option>
+			      </select>
+		      </label>
+			</div>
+			<div style="margin: 1rem auto; width:25rem">
+				<label for="message">
+				<span class="required">Message: *</span> 
+					<textarea id="message" maxlength="300" name="message" placeholder="Please write your message here....." tabindex="5" required="required"></textarea>
+            <div style="margin-top: 0.25rem; text-align: right" id="counter">0</div>
+
+      	</label>     
+      </div>
+
+
+
+      <!--  Source- https://htmldom.dev -->
+        <script>		
+            document.addEventListener('DOMContentLoaded', function () {
+                const messageEle = document.getElementById('message');
+                const counterEle = document.getElementById('counter');
+                const maxLength = messageEle.getAttribute('maxlength');
+                counterEle.innerHTML = `0/${maxLength}`;
+                messageEle.addEventListener('input', function (e) {
+                    const target = e.target;
+                    const currentLength = target.value.length;
+                    counterEle.innerHTML = `${currentLength}/${maxLength}`;
+                });
+            });
+        </script>
+
+			<div id="margin">		           
+		      <button name="" type="" id="" formaction="./x/page2.html">Submit</button> 
+		      <button name="" type="" id="" formaction="">Clear Form</button> 
+			</div>
+
+		   </form>
+
+	</div>
+  
+</body>
+</html>
